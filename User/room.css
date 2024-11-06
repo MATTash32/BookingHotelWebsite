@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&display=swap');
+
+body{
+    margin: 0;
+    background-image: url('image/Desktop - 12.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #eee;
+    font-family: 'Istok Web', sans-serif;
+    font-size: 12px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+li{
+    list-style: none;
+}
+
+p{
+    color: #000;
+}
+
+header{
+    display: flex;
+    width: 100vw;
+    height: 70px;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+    z-index: 10000;
+    top: 0;
+    position: fixed;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+header .logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 50px;
+}
+
+header p{
+    font-family: inter;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 40px;
+    padding-right: 50px;
+    align-items: center;
+
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+}
+
+header nav ul li a{
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    transition: all 1s;
+    border: 1px solid white;
+}
+
+header nav ul li a:hover{
+    
+    border: 1px solid;
+    border-radius: 5px;
+    transform: translateY(-5px);
+}
+
+
+
+
+
+
+/* carousel */
+.carousel{
+    height: 85vh;
+    margin: 30px auto ;
+    width: 90vw;
+    margin-top: 100px;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+.carousel .list .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel .list .item .content{
+    position: absolute;
+    top: 10%;
+    width: 1140px;
+    max-width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 20%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+    
+}
+
+
+.carousel .list .item .topic{
+    font-size: 9em;
+    font-weight: bold;
+    line-height: 1.3em;
+    color: #000000;
+    font-family: Italianno;
+}
+
+.carousel .list .item .des{
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.carousel .list .item .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+.carousel .list .item .buttons button{
+    border: none;
+    background-color: #000000;
+    letter-spacing: 3px;
+    font-family: istok web;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #ffffff;
+}
+.carousel .list .item .buttons button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #000000;
+    color: #000000;
+}
+/* thumbail */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 60%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* arrows */
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #000000;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+    border: 1px solid black;
+}
+.arrows button:hover{
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid white;
+    
+}
+
+/* animation */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* animation text in first item */
+
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.carousel .list .item:nth-child(1) .content .title{
+    animation-delay: 1.2s!important;
+}
+.carousel .list .item:nth-child(1) .content .topic{
+    animation-delay: 1.4s!important;
+}
+.carousel .list .item:nth-child(1) .content .des{
+    animation-delay: 1.6s!important;
+}
+.carousel .list .item:nth-child(1) .content .buttons{
+    animation-delay: 1.8s!important;
+}
+/* create animation when next click */
+.carousel.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.prev .list .item img{
+    z-index: 100;
+}
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+.carousel.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+/* running time */
+
+.carousel .time{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 3px;
+    background-color: #ffffff;
+    left: 0;
+    top: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time{
+    animation: runningTime 3s linear 1 forwards;
+}
+@keyframes runningTime{
+    from{ width: 100%}
+    to{width: 0}
+}
+
+
+/* prev click */
+
+.carousel.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 60%;
+        border-radius: 20px;
+    }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+.carousel.prev .list .item:nth-child(2) .content .author,
+.carousel.prev .list .item:nth-child(2) .content .title,
+.carousel.prev .list .item:nth-child(2) .content .topic,
+.carousel.prev .list .item:nth-child(2) .content .des,
+.carousel.prev .list .item:nth-child(2) .content .buttons
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1364px) {
+
+    header .logo p{
+        font-size: 20px;
+    }
+
+    header nav ul {
+        gap: 20px;
+    }
+
+    header nav ul li a{
+        padding: 5px 10px;
+        font-size: 14px;  
+    }
+
+
+    .thumbnail{
+        left: 45%;
+    } 
+
+    @keyframes outFrame{
+        to{
+            width: 150px;
+            height: 220px;
+            bottom: 50px;
+            left: 45%;
+            border-radius: 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 988px) {
+    .thumbnail{
+        display: none;
+    } 
+
+    header nav .notif img{
+        width: 35px;
+        height: 35px;
+    }
+
+    header .logo p{
+        font-size: 14px;
+    }
+
+    header nav ul {
+        gap: 16px;
+    }
+
+    header nav ul li a{
+        padding: 0px 0px;
+        font-size: 12px;  
+    }
+
+    
+
+    @keyframes outFrame{
+        to{
+            width: 0;
+            height: 0;
+            bottom: 50px;
+            left: 90%;
+            border-radius: 20px;
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+        padding-right: 0;
+    }
+    .carousel .list .item .content .title{
+        font-size: 30px;
+    }
+}
+
+
+
+.category{
+    margin-top: 5rem;
+}
+
+.category h1{
+    color: #000;
+    font-family: 'Italianno', sans-serif;
+    font-size: 4rem;
+    margin: 0 5rem;
+    font-weight: 100;
+}
+
+.category .product-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.category .product{
+    display: flex;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    width: 90vw;
+    height: 600px;
+}
+
+.category .product .product-img img{
+    width: 60rem;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.category .product .product-descrip{
+    margin: 150px 0px 0px 7%;
+    min-width: 200px;
+    width: 400px;
+}
+
+.category .product .product-descrip h2{
+    font-size: 24px;
+    font-weight: 100;
+    color: #000;
+}
+
+.category .product .product-descrip .room-detail ul{
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.category .product .product-descrip .room-detail ul li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category .product .product-descrip .room-detail ul li h3, h3 span{
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.category .product .product-descrip .room-detail > div h2{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 0;
+}
+
+.category .product .product-descrip .room-detail > div ul{
+    margin-top: 0;
+}
+
+.category .product .product-descrip .room-detail > div ul li{
+    font-size: 14px;
+    
+}
+.category .product .product-descrip .price{
+    position: absolute;
+    font-family: inter;
+    font-weight: 500;
+    font-size: 20px;
+    bottom: 50px;
+    right: 50px;
+    color: gray;
+    padding: 5px;
+    margin-right: 0;
+    font-weight: 100;
+}
+
+.category .product .product-descrip .price span{
+    color: #fff;
+} 

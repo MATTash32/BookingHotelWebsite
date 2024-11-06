@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&display=swap');
+
+:root {
+    --main-color: #000000;
+    --second-color: #ffffff;
+    --lighter-color: #f1f5f9;
+    --light-color: #cbd5e1;
+    --dark-color: #0f172a;
+    
+    --font-smaller: 14px;
+    --font-bigger: 20px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../pic/LOG\ IN.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-size: var(--font-smaller);
+}
+
+p{
+    font-size: var(--font-smaller);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 0.5em;    
+}
+
+span{
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+header {
+    padding: 0 43px;
+    width: 175px;
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo p {
+    font-size: 16px;
+    font-weight: 700; 
+    font-family: Istok web;
+    color: #000000; 
+}
+
+
+
+/* Layout */
+.container {
+    max-width: 1000px;
+    max-height: 588px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    
+
+}
+
+
+
+
+/* Progress Section */
+.form-box .progress {
+    position: relative;
+    padding: 1em;
+}
+
+
+.progress ul.progress-step {
+    margin-top: 5em;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress ul.progress-step li {
+    position: relative;
+    
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.progress ul.progress-step li > span {
+    position: relative;
+    font-size: var(--font-smaller);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 1em;
+    background-color: rgba(255, 255, 255);
+    z-index: 1;
+}
+
+.progress ul.progress-step li.active > span {
+    background-color: var(--main-color);
+    color: #fff;
+    border: 2px solid var(--second-color);
+    z-index: 1;
+}
+
+.progress ul.progress-step li p span {
+    font-size: var(--font-smaller);
+    color: var(--dark-color);
+    display: none;
+}
+
+.progress ul li p {
+    position: absolute;
+    top: -4em;
+    font-size: 12px;
+}
+
+/* Form Styles */
+.form-box form {
+    width: 100%;
+    padding: 3em 1em; 
+    border-radius: 30px 30px 15px 15px;
+    overflow-x: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+form > div {
+    max-width: 400px;
+    margin: 0 auto 2em;
+}
+
+.gender-age-row, .city-zip {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+
+.gender-age-row > div {
+    width: 40%;
+}
+
+.city-zip > div {
+        width: 31.8%;
+}
+
+
+
+.otp input {
+    width: 120px;
+    text-align: center;
+}
+
+
+
+.otp button{
+    width: 120px;
+    height: 40px;
+    margin-left:20px ;
+    border-radius: 7px;  
+}
+
+form > div div:not(.checkbox):not(.gender-age-row):not(.city-zip):not(.otp-input) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
+form :where(input, select) {
+    height: 40px;
+    padding: 0 1em;
+    border-radius: 7px;
+    background-color: transparent;
+    outline-color: var(--main-color);
+    border: 1px solid var(--dark-color);
+    
+}
+
+form label {
+    font-size: var(--font-smaller);
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    color: var(--dark-color);
+}
+
+form .checkbox input {
+    height: auto;
+    margin-left: 3em;
+    margin-right: 1em;
+}
+
+
+.login form .input {
+    position: relative;
+}
+
+.login form .input input {
+    position: relative;
+    width: 231px;
+}
+
+.login form .input img {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 24px;
+    filter: brightness(0);
+    cursor: pointer;
+}
+
+
+
+
+
+
+.form-three .pass{
+    position: relative;
+}
+
+.form-three .pass input {
+    position: relative;
+   
+}
+
+.form-three .pass img{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 24px;
+    filter: brightness(0);
+    cursor: pointer;
+}
+
+
+
+
+
+/* Form Animation */
+form > div:not(.btn-group) {
+    display: none;
+    animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form > div.active {
+    display: block;
+}
+
+/* Button Styles */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.btn-group [class^="btn-"] {
+    background-color: var(--main-color);
+    color: #fff;
+    border: 1px solid var(--second-color);
+    padding: 1em 2.5em;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s ease-in-out;
+}
+
+.btn-group [class^="btn-"]:disabled {
+    display: none;
+}
+
+.btn-group [class^="btn-"]:hover:not(:disabled) {
+    background-color: var(--second-color);
+    border-color: var(--main-color);
+    color: #000000;
+}
+
+.btn-group .btn-submit,
+.form-three.active ~ .btn-group .btn-next {
+    display: none;
+}
+
+
+.form-three.active ~ .btn-group .btn-submit {
+    display: block;
+}
+
+.form-three.active ~ .btn-group,
+.form-two.active ~ .btn-group {
+    justify-content: space-between;
+}
+
+.form-one.active ~ .btn-group{
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+
+    header {
+        padding: 48px 90px;
+    }
+
+
+    .form-box {
+        
+        height: 660px;
+        flex-direction: row;
+    }
+
+    .form-box .progress {
+        flex: 1 0 45%;
+        min-width: 300px;
+        padding: 3em;
+    }
+
+    .logo {
+       margin: -48px -48px 48px;
+    }
+
+    .progress ul.progress-step {
+        flex-direction: column;
+        margin: 150px 0;
+        align-items: start;
+        justify-content: start;
+        
+    }
+
+    
+    
+    .progress ul.progress-step li {
+        margin: 0 100px;
+    }
+
+    .form-one {
+        margin: 4em 0;
+    }
+
+    .form-two {
+        margin: 20px 0;
+    }
+
+    .form-three {
+        margin: 8em 0 2em;
+    }
+
+    .form-box form {
+        margin: 1.5em 0;
+        padding: 0 4em;
+        border-left: 2px solid rgba(146, 138, 138, 0.5);
+        border-radius: 0 15px 15px 0;
+    }
+
+    .progress ul li p {
+        position: relative;
+        top: auto;
+        font-size: inherit;
+    }
+
+    .progress ul.progress-step li p span {
+        display: block;
+    }
+
+    form{
+        overflow-y: hidden;
+    }
+    
+    form > div {
+        max-width: 600px;
+    }
+
+    .form-three.active ~ .btn-group{
+        margin-top: 0;
+    }
+}

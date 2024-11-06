@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    line-height: 1.5rem;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+}
+
+.mainbox{
+    margin: 10px auto;
+    border: 1px solid white;
+    border-radius: 15px;
+    height: 97vh;
+    width: 99vw;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+main{
+    padding: min(30px, 7%);
+}
+
+main .mainheader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .mainheader .acc {
+    display: flex;
+    gap: 20px;
+}
+
+main .backArrow{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+main .container_form{
+    background-color: #fff;
+    height: 76vh;
+    margin-top: 10px;
+    padding: 30px;
+    border-radius: 20px;
+    
+}
+
+main .picture-input{
+    display: flex;
+    flex-direction: column;
+}
+
+main .picture-input .picture{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px 5px;
+    border-bottom: 1px solid  #BFBFBF;
+}
+
+
+main .picture-input .drag-area, .drag-area1, .drag-area2, .drag-area3{
+    border: 1px dashed #BFBFBF; 
+    border-radius: 10px;
+    width: 200px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+main .picture-input .drag-area.active, .drag-area1.active, .drag-area2.active, .drag-area3.active{
+    border: none;
+}
+
+
+main .picture-input .drag-area button, .drag-area1 button, .drag-area2 button, .drag-area3 button{
+    border: none;
+    background-color: transparent;
+}
+
+main .picture-input .drag-area img, .drag-area1 img, .drag-area2 img, .drag-area3 img{
+    width: 100%;
+    height: 100%;
+    margin-top: -20px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+main .details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #BFBFBF;
+}
+
+
+main .details .input-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 5px;
+
+}
+
+main .details .input-detail .inputd{
+    display: flex;
+    gap: 20px;
+}
+
+main .details .input-detail .inputd > div{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+main .details .input-detail .inputd label, .inputde label{
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+main .details .input-detail .inputd input, select{
+    width: 300px;
+    height: 25px;
+    border-radius: 50px;
+    border: 1px solid #BFBFBF;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+main .details .input-detail .inputde{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+main .details .input-detail .inputde textarea{
+    width: 500px;
+    height: 70px;
+    border-radius: 10px;
+    border: 1px solid #BFBFBF;
+    padding: 20px;
+}
+
+main .accesi{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #BFBFBF;
+}
+
+main .accesi .check-input{
+    display: flex;
+    gap: 20px;
+}
+
+main .accesi .check-input > div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+main .accesi .check-input input[type="checkbox"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #BFBFBF;
+    transition: 0.5s all ease;
+    cursor: pointer;
+}
+main .accesi .check-input input[type="checkbox"]:checked{
+    background-color: #BFBFBF;
+}
+
+main .accesi .check-input label{
+    font-size: 14px;
+}
+
+main .submit{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+main .submit button{
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #BFBFBF;
+}
+
+main .submit .Save{
+    color: white;
+    background-color: #282828;
+    border: none;
+}
+
+#sidebar{
+    box-sizing: border-box;
+    height: 95vh;
+    width: 250px;
+    margin: 10px 10px;
+    padding: 5px 1.5em;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    position: sticky;
+    top: 5px;
+    align-self: start;
+}
+
+#sidebar ul{
+    list-style: none;
+}
+
+#sidebar > ul > li:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+    margin-top: 1rem;
+    
+    img{
+        width: 35px;
+        height: 48px;
+    }
+
+    .logo{
+        padding:  .85em;
+        font-size: 20px;
+    }
+    
+}
+
+#sidebar ul li.active a{
+    color: white;
+    background-color: black;
+
+    img{
+        color: white;
+    }
+}
+
+#sidebar a, #sidebar .logo{
+    border-radius: .5em;
+    padding: .85em 2.2em;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#sidebar svg{
+    flex-shrink: 0;
+}
+
+#sidebar a span{
+    flex-grow: 1;
+}
+@media (min-width: 2560px) {
+    .mainbox {
+        width: 90vw;
+        margin: 30px auto;
+    }
+
+    main .container_form {
+        
+        margin-top: 30px;
+        padding: 50px;
+    }
+
+    main .picture-input .drag-area, .drag-area1, .drag-area2, .drag-area3 {
+        width: 300px;
+        height: 200px;
+    }
+
+    main .details .input-detail .inputd input, select {
+        width: 500px;
+        height: 40px;
+    }
+
+    main .details .input-detail .inputde textarea {
+        width: 700px;
+        height: 150px;
+    }
+
+    #sidebar {
+        width: 350px;
+        height: 93vh;
+        margin: 30px 30px;
+        padding: 15px 3em;
+    }
+}

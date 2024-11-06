@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <div id="page" class="site">
+
+
+
+        <header>
+            <div class="logo">
+                <img src="../pic/Untitled_design-removebg-preview 3.png" width="50" height="60" alt="">
+                <p>Transylvania</p>
+            </div>
+        </header>
+
+
+
+        <div class="container">
+            <div class="form-box">
+                <div class="progress">
+
+                    <div class="back" id="back">
+                        <img src="../pic/Object.png" alt="">
+                    </div>
+
+                    
+                    <ul class="progress-step">
+                        <li class="step active">
+                            <span>1</span>
+                            <p>Personal</p>
+                        </li>
+                        <li class="step">
+                            <span>2</span>
+                            <p>Contact</p>  
+                        </li>
+                        <li class="step">
+                            <span>3</span>
+                            <p>Security</p>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+                <form id="signupForm">
+                    <div class="form-one form-step active" >
+                        <div class="bg-svg"></div>
+                        
+                        
+                        <div>
+                            <label>First Name</label>
+                            <input type="text" placeholder="Enter your first name">
+                        </div>
+                        <div>
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Enter your last name">
+                        </div>
+                        
+                        <div class="birth"></div>
+                        <div>
+                            <label for="dob">Date of birth</label>
+                            <input type="date" id="dob" name="dob">
+                        </div>
+                        
+                        <div class="gender-age-row">
+                            <div>
+                                <label for="gender">Gender</label>
+                                <select id="gender">
+                                    <option value="">please select your gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="age">Age</label>
+                                <input type="text" id="age" placeholder="Enter your age">
+                            </div>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="checkbox" id="checkbox">
+                            <label for="checkbox">Please agree to the <a href="">terms of service</a></label>
+                        </div>
+
+                        
+
+                    </div>
+
+                    <div class="form-two form-step">
+                        
+                        <div>
+                            <label>phone no.</label>
+                            <input type="tel" placeholder="+63xxxxxxxxxx">
+                        </div>
+
+                        <div>
+                            <label>Email Address</label>
+                            <input type="email" placeholder="Enter your email address" name="email" required>
+                        </div>
+
+                        <div>
+                            <label>Country</label>
+                            <select name="Country" id="Country">
+                                <option value="">please select your country</option>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="UK">UK</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="Japan">Japan</option>
+                                <option value="China">China</option>
+                                <option value="India">India</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Tunisia">Tunisia</option>
+                                <option value="Morocco">Morocco</option>
+                                <option value="Algeria">Algeria</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Uganda">Uganda</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="Burundi">Burundi</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Philippines">Philippines</option> 
+                                
+                            </select>
+                        </div>
+
+                        <div class="city-zip">
+                            <div>
+                                <label>Zip Code</label>
+                                <input type="text" placeholder="zip code">
+                            </div>
+
+                            <div>
+                                <label>City</label>
+                                <input type="text" placeholder="city">
+                            </div>
+
+                            <div>
+                                <label>Province</label>
+                                <input type="text" placeholder="Province">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label>Address</label>
+                            <input type="text" placeholder="street">
+                        </div>
+
+                        <div class="otp">
+                            <label>OTP</label>
+                            <div class="otp-input">
+                                <input type="text" placeholder="Enter your OTP" id="otpInput" maxlength="6" required>
+                                <button id="verifyButton" disabled>Verify</button>
+                            </div>
+
+                            <span id="sendCodeButton">Send Code</span>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-three form-step">
+                        
+
+                        <div>
+                            <label>username</label>
+                            <input type="text" placeholder="Enter your username" name="username" required>
+                        </div>
+
+                        
+
+                        <div>
+                            <label>Password</label>
+                            <div class="pass">
+                                <input type="password" name="password" minlength="8" id="password" placeholder="password" required>
+                                <img src="../pic/eye-close-svgrepo-com.svg" id="eyesvg" > 
+                            </div>
+                        </div>
+
+                        <div>
+                            <label>Confirm Password</label>
+                            <div class="pass">
+                                <input type="confirmPassword" name="confirmPassword" placeholder="confirmPassword" minlength="8"  id="password1" required>
+                                <img src="../pic/eye-close-svgrepo-com.svg" id="eyesvg1"> 
+                            </div>
+                        </div>
+
+                        
+
+                        <div>
+
+                        </div> 
+
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn-prev" disabled>Previous</button>
+                        <button type="button" class="btn-next">Next</button>
+                        <button type="submit" class="btn-submit" id="submitButton" disabled>Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="style.js"></script>
+</body>
+</html>
