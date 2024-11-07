@@ -1,5 +1,6 @@
 const password = document.getElementById('loginPassword');
 const eyesvg = document.getElementById('loginEyesvg');
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 eyesvg.onclick = function(){
     if (password.type === 'password') {
@@ -16,7 +17,12 @@ const loginForm = document.getElementById('loginForm');
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const credential = loginForm.credential.value;
-  const password = loginForm.password.value;
+  const passwordValue = password.value;
+
+  if (!passwordRegex.test(passwordValue)) {
+    alert('Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
+    return;
+  }
 
   // Check if the input is a username or email
   let storedUserData;
@@ -39,7 +45,7 @@ loginForm.addEventListener('submit', (event) => {
 
   if (storedUserData) {
     const { password: storedPassword } = JSON.parse(storedUserData);
-    if (storedPassword === password) {
+    if (storedPassword === passwordValue) {
       window.location.href = '../User/room.html';
     } else {
       alert('Invalid password!');

@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles1.css">
 </head>
 <body>
-
     <div class="mainbox">
         <nav id="sidebar">
             <ul>
@@ -75,131 +74,43 @@
         <main>
             <div class="mainheader">
                 <h1>Hi, User</h1>
+                <div class="search" >
+                    
+                    <input type="text" placeholder="search">
+                </div>
                 <div class="acc">
+                    <img src="img/Group 1000001770.png" alt="">
                     <img class="notif" src="img/Frame 7908.svg" width="42" >
-                    <img src="img/man(3) 1.jpg" width="42">
+                    <img src="img/man(3) 1.png" width="42" >
                 </div>
             </div>
 
-            <div class="backArrow">
-                <img id="backArrowsvg" src="img/Action Icon.svg" >
-                <h3>Add New Room</h3>
+            <div class="Date">
+                <p>Friday, November 18,2024</p>
             </div>
 
-            <div class="container_form">
-                <form id="array-form">
-                    <div class="picture-input">
-                        <h5>Room Picture</h5>
+            <h1 class="title">Rooms</h1>
 
-                        <div class="picture">
-                            <div class="drag-area">
-                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13.8333 4.33268V6.82435C13.8333 6.82435 12.175 6.83268 12.1667 6.82435V4.33268H9.66667C9.66667 4.33268 9.675 2.67435 9.66667 2.66602H12.1667V0.166016H13.8333V2.66602H16.3333V4.33268H13.8333ZM11.3333 7.66602V5.16602H8.83333V2.66602H2.16667C1.25 2.66602 0.5 3.41602 0.5 4.33268V14.3327C0.5 15.2493 1.25 15.9993 2.16667 15.9993H12.1667C13.0833 15.9993 13.8333 15.2493 13.8333 14.3327V7.66602H11.3333ZM2.16667 14.3327L4.66667 10.9993L6.33333 13.4993L8.83333 10.166L12.1667 14.3327H2.16667Z" fill="#8C8C8C" fill-opacity="0.85098"/>
-                                </svg>
-                                <button>Add img</button>
-                                <input type="file" name="image" hidden id="roomPicture1">
-                            </div>
+            <div class="buttons">
+                <div class="cateButton">
+                    <button class="active">All</button>
+                    <button>Rooms</button>
+                    <button>Poll</button>
+                    <button>Hall</button>
+                </div>
 
-                            <div class="drag-area1">
-                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13.8333 4.33268V6.82435C13.8333 6.82435 12.175 6.83268 12.1667 6.82435V4.33268H9.66667C9.66667 4.33268 9.675 2.67435 9.66667 2.66602H12.1667V0.166016H13.8333V2.66602H16.3333V4.33268H13.8333ZM11.3333 7.66602V5.16602H8.83333V2.66602H2.16667C1.25 2.66602 0.5 3.41602 0.5 4.33268V14.3327C0.5 15.2493 1.25 15.9993 2.16667 15.9993H12.1667C13.0833 15.9993 13.8333 15.2493 13.8333 14.3327V7.66602H11.3333ZM2.16667 14.3327L4.66667 10.9993L6.33333 13.4993L8.83333 10.166L12.1667 14.3327H2.16667Z" fill="#8C8C8C" fill-opacity="0.85098"/>
-                                </svg>
-                                <button>Add img</button>
-                                <input type="file" hidden id="roomPicture2">
-                            </div>
-
-                            <div class="drag-area2">
-                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13.8333 4.33268V6.82435C13.8333 6.82435 12.175 6.83268 12.1667 6.82435V4.33268H9.66667C9.66667 4.33268 9.675 2.67435 9.66667 2.66602H12.1667V0.166016H13.8333V2.66602H16.3333V4.33268H13.8333ZM11.3333 7.66602V5.16602H8.83333V2.66602H2.16667C1.25 2.66602 0.5 3.41602 0.5 4.33268V14.3327C0.5 15.2493 1.25 15.9993 2.16667 15.9993H12.1667C13.0833 15.9993 13.8333 15.2493 13.8333 14.3327V7.66602H11.3333ZM2.16667 14.3327L4.66667 10.9993L6.33333 13.4993L8.83333 10.166L12.1667 14.3327H2.16667Z" fill="#8C8C8C" fill-opacity="0.85098"/>
-                                </svg>
-                                <button>Add img</button>
-                                <input type="file" hidden id="roomPicture3">
-                            </div>
-
-                            <div class="drag-area3">
-                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13.8333 4.33268V6.82435C13.8333 6.82435 12.175 6.83268 12.1667 6.82435V4.33268H9.66667C9.66667 4.33268 9.675 2.67435 9.66667 2.66602H12.1667V0.166016H13.8333V2.66602H16.3333V4.33268H13.8333ZM11.3333 7.66602V5.16602H8.83333V2.66602H2.16667C1.25 2.66602 0.5 3.41602 0.5 4.33268V14.3327C0.5 15.2493 1.25 15.9993 2.16667 15.9993H12.1667C13.0833 15.9993 13.8333 15.2493 13.8333 14.3327V7.66602H11.3333ZM2.16667 14.3327L4.66667 10.9993L6.33333 13.4993L8.83333 10.166L12.1667 14.3327H2.16667Z" fill="#8C8C8C" fill-opacity="0.85098"/>
-                                </svg>
-                                <button>Add img</button>
-                                <input type="file" hidden id="roomPicture4">
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="details">
-                        <h5>Room detail</h5>
-
-                        <div class="input-detail">
-                            <div class="inputd input1">
-                                <div>
-                                    <label for="roomNumber">Room number </label>
-                                    <input type="text" name="roomNumber" id="roomNumber">
-                                </div>
-
-                                <div>
-                                    <label for="roomFloor">Room floor</label>
-                                    <input type="text" name="roomFloor" id="roomFloor">
-                                </div>
-
-                                <div>
-                                    <label for="roomType">Room type</label>
-                                    <select name="roomType" id="roomType">
-                                        <option value="Single Room">Single</option>
-                                        <option value="Double Room">Double</option>
-                                        <option value="VIP Room">VIP</option>
-                                    </select>
-                                </div>
-                            </div>
-
-
-                            <div class="inputd input2">
-                                <div>
-                                    <label for="roomPrice">Room price per night</label>
-                                    <input type="text" name="roomPrice" id="roomPrice">
-                                </div>
-
-                                <div>
-                                    <label for="bedType">Bed type</label>
-                                    <select name="bedType" id="bedType">
-                                        <option value="1">Single</option>
-                                        <option value="2">Double</option>
-                                        <option value="1">King</option>
-                                        <option value="1">Queen</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label for="roomSize">Room size</label>
-                                    <input type="text" name="roomSize" id="roomSize">
-                                </div>
-                            </div>
-
-                            <div class="inputde">
-                                <label for="roomDescription">Room description</label>
-                                <textarea name="roomDescription" id="roomDescription" cols="50" rows="10"></textarea>
-                            </div>
-
-                            
-                        </div>
-                    </div>
-
-                    
-
-                    <div class="submit" id="submit">
-                        <Button class="Save">
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.75 0.25H1.75C0.9175 0.25 0.25 0.925 0.25 1.75V12.25C0.25 13.075 0.9175 13.75 1.75 13.75H12.25C13.075 13.75 13.75 13.075 13.75 12.25V3.25L10.75 0.25ZM7 12.25C5.755 12.25 4.75 11.245 4.75 10C4.75 8.755 5.755 7.75 7 7.75C8.245 7.75 9.25 8.755 9.25 10C9.25 11.245 8.245 12.25 7 12.25ZM9.25 4.75H1.75V1.75H9.25V4.75Z" fill="white"/>
-                            </svg>
-                             Save   
-                        </Button>
-                        <button>Cancel</button>
-                    </div>
-                </form>
+                <div class="addButton">
+                    <button id="addBtn">Add</button>
+                </div>
             </div>
+
+            <div class="displayRooms">
+                
+            </div>
+
+            
         </main>
     </div>
-
-    <script src="script.js"></script>
+    <script src="script1.js"></script>
 </body>
 </html>

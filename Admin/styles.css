@@ -83,6 +83,7 @@ main .picture-input .drag-area, .drag-area1, .drag-area2, .drag-area3{
     justify-content: center;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 main .picture-input .drag-area.active, .drag-area1.active, .drag-area2.active, .drag-area3.active{
@@ -153,8 +154,8 @@ main .details .input-detail .inputde{
 }
 
 main .details .input-detail .inputde textarea{
-    width: 500px;
-    height: 70px;
+    width: 600px;
+    height: 200px;
     border-radius: 10px;
     border: 1px solid #BFBFBF;
     padding: 20px;

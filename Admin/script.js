@@ -74,7 +74,7 @@ function loadGallery() {
     let galleryContainer = document.getElementById('product-list');
     
     if (galleryContainer && galleryImage.length > 0) {
-        // Clear previous content
+        
         // galleryContainer.innerHTML = '';
         
         for (let gallery of galleryImage) {
@@ -139,7 +139,7 @@ function loadGallery() {
             sqftSvg.setAttribute('viewBox', '0 0 20 20');
             let sqftPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
             sqftPath.setAttribute('d', 'M20.0083 9.16667H19.175V0.833333H10.8417V0H20.0083V9.16667ZM9.175 20H0.0083313V10.8333H0.841665V19.1667H9.175V20Z');
-            sqftPath.setAttribute('fill', 'white'); // Changed to make the SVG white
+            sqftPath.setAttribute('fill', 'white'); 
             sqftSvg.appendChild(sqftPath);
             let sqftH3 = document.createElement('h3');
             sqftH3.innerHTML = `<span>${gallery['roomSize']}</span> Sq ft`;
@@ -245,10 +245,11 @@ formLoad();
 
 
 
+let backArrow = document.getElementById('backArrowsvg');
 
-
-
-
-
+backArrow.addEventListener('click', function(event){
+  window.location.href = '../Admin/adminFacility.html';
+}
+);
 
 

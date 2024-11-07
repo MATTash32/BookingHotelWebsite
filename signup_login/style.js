@@ -20,6 +20,13 @@ prevButton.addEventListener('click', () => {
     updateProgress();
 });
 
+steps.forEach((step, i) => {
+    step.addEventListener('click', () => {
+        active = i + 1;
+        updateProgress();
+    });
+});
+
 const updateProgress = () => {
     steps.forEach((step, i) => {
         if (i === active - 1) {
@@ -44,27 +51,45 @@ backButton.addEventListener('click', () => {
 
 const password = document.getElementById('password');
 const eyesvg = document.getElementById('eyesvg');
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
 eyesvg.onclick = function(){
-    password.type = password.type === 'password' ? 'text' : 'password';
-    eyesvg.src = password.type === 'password' ? "../pic/eye-close-svgrepo-com.svg" : "../pic/eye-svgrepo-com.svg";
+    if (password.type === 'password') {
+        password.type = 'text';
+        eyesvg.src ="../pic/eye-svgrepo-com.svg";
+    } else {
+        password.type = 'password';
+        eyesvg.src ="../pic/eye-close-svgrepo-com.svg";
+    }
 }
 
 const password1 = document.getElementById('password1');
 const eyesvg1 = document.getElementById('eyesvg1');
 eyesvg1.onclick = function(){
-    password1.type = password1.type === 'password' ? 'text' : 'password';
-    eyesvg1.src = password1.type === 'password' ? "../pic/eye-close-svgrepo-com.svg" : "../pic/eye-svgrepo-com.svg";
+    if (password1.type === 'password') {
+        password1.type = 'text';
+        eyesvg1.src ="../pic/eye-svgrepo-com.svg";
+    } else {
+        password1.type = 'password';
+        eyesvg1.src ="../pic/eye-close-svgrepo-com.svg";
+    }
 }
-
-
 
 const subButton = document.querySelector('.btn-submit');
 subButton.addEventListener('click', (e) => {
+
+  if (!passwordRegex.test(password.value)) {
+    e.preventDefault();
+    alert('Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
+    return;
+  }
+
   if(password.value !== password1.value){
     e.preventDefault();
     alert('Passwords do not match. Please try again.');
     return;
   }
+  
 });
 
 
