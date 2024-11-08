@@ -180,5 +180,41 @@ main .buttons .cateButton .active{
 main .displayRooms{
     height: 650px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius:10px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    
+}
+
+table thead th{
+    font-weight: 100;
+    font-size: small;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+td:last-child {
+    padding: 12px 6px ; 
+}
+
+td {
+    padding: 12px 110px 12px 10px; 
+}
+

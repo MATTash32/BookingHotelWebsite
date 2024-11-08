@@ -92,7 +92,7 @@ function loadGallery() {
             roomDetail.classList.add('room-detail');
             let ul = document.createElement('ul');
             let h2 = document.createElement('h2');
-            h2.textContent = gallery['roomType'];
+            h2.innerHTML = `${gallery.roomType} Room`;
             descripContainer.appendChild(h2);
 
             // Adding room details
@@ -204,9 +204,7 @@ function formLoad() {
                     bedType: form.bedType.value,
                     roomSize: form.roomSize.value,
                     roomDescription: form.roomDescription.value,
-                    wheelchairAccessible: form['wheelchair-accessible'].checked,
-                    hearingImpaired: form['hearing-impaired'].checked,
-                    visuallyImpaired: form['visually-impaired'].checked,
+                    
                 };
                 
                 // Push the new gallery item into the array
