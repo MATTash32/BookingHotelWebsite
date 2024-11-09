@@ -3,39 +3,38 @@ dropAreas.forEach((dropArea) => {
   
   const button = dropArea.querySelector("button");
   const input = dropArea.querySelector("input");
-  let file; // This is a global variable and we'll use it inside multiple functions
+  let file; 
 
   // Click event for the drop area
   dropArea.onclick = () => {
-    input.click(); // If user clicks on the button then the input also clicked
+    input.click(); 
   }
 
   // Change event for the input
   input.addEventListener("change", function() {
-    // Getting user selected file and [0] means if user selects multiple files then we'll select only the first one
     file = this.files[0];
     dropArea.classList.add("active");
-    showFile(dropArea); // Calling the function
+    showFile(dropArea); 
   });
 
   // Function to show the file
   function showFile(dropArea) {
-    let fileType = file.type; // Getting the selected file type
+    let fileType = file.type; 
     let validExtensions = ["image/jpeg", "image/jpg", "image/png"]; // Adding some valid image extensions in an array
-    if (validExtensions.includes(fileType)) { // If the user selected file is an image file
-      let fileReader = new FileReader(); // Creating a new FileReader object
+    if (validExtensions.includes(fileType)) { 
+      let fileReader = new FileReader(); 
       fileReader.onload = () => {
-        let fileURL = fileReader.result; // Passing the user file source in the fileURL variable
-        let imgTag = document.createElement('img'); // Creating an img tag
-        imgTag.src = fileURL; // Setting the src attribute to the user selected file source
-        imgTag.alt = "image"; // Setting the alt attribute
-        // Check if there is already an image displayed, if yes, replace it with the new one
+        let fileURL = fileReader.result; 
+        let imgTag = document.createElement('img'); 
+        imgTag.src = fileURL; 
+        imgTag.alt = "image"; 
+        
         if (dropArea.querySelector('img')) {
           dropArea.replaceChild(imgTag, dropArea.querySelector('img'));
         } else {
-          dropArea.appendChild(imgTag); // Adding the created img tag inside the dropArea container
+          dropArea.appendChild(imgTag); 
         }
-        // Hide the button when an image is displayed
+        
         button.style.display = 'none';
       }
       fileReader.readAsDataURL(file);
@@ -56,7 +55,7 @@ function resetDropArea(dropArea) {
 }
 
 
-// Initialize galleryImage array
+
 let galleryImage = [];
 
 // Load existing gallery data from localStorage

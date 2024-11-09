@@ -67,6 +67,7 @@ body{
     
 }
 
+
 #sidebar ul li.active a{
     color: white;
     background-color: black;
@@ -75,6 +76,7 @@ body{
         color: white;
     }
 }
+
 
 #sidebar a, #sidebar .logo{
     border-radius: .5em;
