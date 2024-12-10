@@ -109,7 +109,6 @@ sendCodeButton.addEventListener('click', () => {
 
   startTimer();
 
-
   sendCodeButton.disabled = true;
   verifyButton.disabled = false;
   submitButton.disabled = true; 
@@ -155,27 +154,27 @@ function generateRandomOtp() {
 
 
 const signupForm = document.getElementById('signupForm');
-  
+let users = [];
+const savedUsers = localStorage.getItem('users');
+if (savedUsers) {
+    users = JSON.parse(savedUsers);
+}
 
-    signupForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const username = signupForm.username.value;
-      const email = signupForm.email.value;
-      const password = signupForm.password.value;
+signupForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const username = signupForm.username.value;
+    const email = signupForm.email.value;
+    const password = signupForm.password.value;
 
-      // Store user data with username as the key
-      localStorage.setItem(username, JSON.stringify({ email, password }));
+    const newUser = {
+        username,
+        email,
+        password
+    };
 
-      alert('Sign up successful!');
-    });
+    users.push(newUser);
 
-    
+    localStorage.setItem('users', JSON.stringify(users));
 
-    
- 
-
-
-
-
-    
-
+    alert('Sign up successful!');
+});

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Italianno&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&display=swap');
 
@@ -103,8 +102,30 @@ header .logo p {
 
 }
 
+/* Form step spacing */
+.form-step {
+    margin-top: 50px;  
+}
 
+.form-one,
+.form-two,
+.form-three,
+.form-four {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;  
+}
 
+/* Adjust form padding */
+.form-box form {
+    width: 100%;
+    padding: 2em 1em;  
+    border-radius: 30px 30px 15px 15px;
+    overflow-x: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
 /* Progress Section */
 .form-box .progress {
@@ -236,17 +257,17 @@ form .checkbox input {
     margin-right: 1em;
 }
 
-
-.login form .input {
+form .input {
     position: relative;
 }
 
-.login form .input input {
+form .input input {
     position: relative;
-    width: 231px;
+    width: 100%;
+    padding-right: 40px;
 }
 
-.login form .input img {
+form .input img {
     position: absolute;
     top: 50%;
     right: 20px;
@@ -256,33 +277,40 @@ form .checkbox input {
     cursor: pointer;
 }
 
-
-
-
-
-
-.form-three .pass{
-    position: relative;
+.pass,
+.pass input,
+.pass img,
+.password-input,
+.password-input input,
+.password-input .password-toggle {
+    all: unset;
 }
 
-.form-three .pass input {
-    position: relative;
-   
-}
-
-.form-three .pass img{
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    width: 24px;
-    filter: brightness(0);
+/* Select styles */
+select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--main-color);
     cursor: pointer;
 }
 
+select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 
+select option {
+    background-color: white;
+    color: var(--main-color);
+}
 
-
+/* Add space between form fields */
+.form-two > div {
+    margin-bottom: 15px;
+}
 
 /* Form Animation */
 form > div:not(.btn-group) {
@@ -303,6 +331,56 @@ form > div:not(.btn-group) {
 
 form > div.active {
     display: block;
+}
+
+/* Button visibility based on active step */
+/* Hide submit button by default */
+.btn-submit {
+    display: none;
+}
+
+/* Only show submit button when form-four is active */
+.form-four.active ~ .btn-group .btn-submit {
+    display: inline-block;
+}
+
+/* Hide next button when form-four is active */
+.form-four.active ~ .btn-group .btn-next {
+    display: none;
+}
+
+/* Button Group Styles */
+.btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn-group button {
+    padding: 8px 25px;
+    background-color: #0E9089;
+    border: none;
+    border-radius: 8px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.btn-group button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Center button on step 1 */
+.form-one.active ~ .btn-group {
+    justify-content: center;
+}
+
+/* Space between buttons for other steps */
+.form-two.active ~ .btn-group,
+.form-three.active ~ .btn-group,
+.form-four.active ~ .btn-group {
+    justify-content: space-between;
 }
 
 /* Button Styles */
@@ -332,32 +410,6 @@ form > div.active {
     border-color: var(--main-color);
     color: #000000;
 }
-
-.btn-group .btn-submit,
-.form-three.active ~ .btn-group .btn-next {
-    display: none;
-}
-
-
-.form-three.active ~ .btn-group .btn-submit {
-    display: block;
-}
-
-.form-three.active ~ .btn-group,
-.form-two.active ~ .btn-group {
-    justify-content: space-between;
-}
-
-.form-one.active ~ .btn-group{
-    justify-content: center;
-}
-
-
-
-
-
-
-
 
 /* Media Queries */
 @media screen and (min-width: 768px) {
