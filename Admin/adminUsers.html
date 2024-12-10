@@ -91,63 +91,67 @@
                 <p>Friday, November 18,2024</p>
             </div>
 
-            <h1 class="title">Rooms</h1>
-
-            <div class="buttons">
-                <div class="cateButton">
-                    <button class="active">All</button>
+            <section class="home">
+                <div class="text">User Management</div>
+                
+                <div class="user-management">
                     
+
+                    <div class="buttons">
+                        <div class="cateButton">
+                            
+                            
+                        </div>
+        
+                        <div class="addButton">
+                            <button class="add-user-btn" onclick="openAddUserModal()">Add</button>
+                        </div>
+                    </div>
+                <div class="displayRooms" id="displayUsers">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- User data will be populated here dynamically -->
+                        </tbody>
+                    </table>
                 </div>
-
-                <div class="addButton">
-                    <button id="addBtn">Add</button>
                 </div>
-            </div>
-
-            <div class="displayRooms" id="displayRooms">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Room Number</th>
-                        <th>Bed type</th>
-                        <th>Room floor</th>
-                        <th>Room facility</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="addItem">
-                    
-                    
-                    
-                </tbody>
-            </table>
-            </div>
-
+            </section>
             
+            <!-- Add/Edit User Modal -->
+            <div id="userModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="modalTitle">Add New User</h2>
+                    <form id="userForm">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        
+                        <button type="submit" class="btn">Save</button>
+                    </form>
+                </div>
+            </div>
         </main>
     </div>
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Edit Facility</h2>
-            <form id="editForm">
-                <div class="form-group">
-                    <label for="editRoomNumber">Room Number:</label>
-                    <input type="text" id="editRoomNumber" required>
-                </div>
-                <div class="form-group">
-                    <label for="editRoomType">Room Type:</label>
-                    <input type="text" id="editRoomType" required>
-                </div>
-                <div class="form-group">
-                    <label for="editRoomFloor">Room Floor:</label>
-                    <input type="text" id="editRoomFloor" required>
-                </div>
-                <button type="submit">Update Room</button>
-            </form>
-        </div>
-    </div>
-    <script src="script1.js"></script>
-    <script src="popupMenu.js"></script>
+    <script src="adminUsers.js"></script>
+    
 </body>
 </html>

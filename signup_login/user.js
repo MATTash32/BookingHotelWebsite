@@ -19,44 +19,55 @@ loginForm.addEventListener('submit', (event) => {
   const credential = loginForm.credential.value;
   const passwordValue = password.value;
 
+  console.log('Login attempt with:', { credential });
+
   if (!passwordRegex.test(passwordValue)) {
+    console.log('Password validation failed');
     alert('Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
     return;
   }
 
-  // Check if the input is a username or email
-  let storedUserData;
-  if (credential.includes('@')) {
-    // Check if the input is an email
-    // Assuming email is unique for each user, find the username from the email
-    for (let key in localStorage) {
-      if (localStorage.hasOwnProperty(key)) {
-        const userData = JSON.parse(localStorage[key]);
-        if (userData.email === credential) {
-          storedUserData = localStorage[key];
-          break;
-        }
-      }
-    }
-  } else {
-    // Check if the input is a username
-    storedUserData = localStorage.getItem(credential);
-  }
+  // Get users array from localStorage
+  const adminUsers = JSON.parse(localStorage.getItem('adminUsers')) || [];
+  console.log('Current admin users in storage:', adminUsers);
+  
+  // Find user by either username or email
+  const adminUser = adminUsers.find(user => 
+    user.username === credential || user.email === credential
+  );
 
-  if (storedUserData) {
-    const { password: storedPassword } = JSON.parse(storedUserData);
-    if (storedPassword === passwordValue) {
-      window.location.href = '../User/room.html';
+  console.log('Found admin user:', adminUser);
+
+  if (adminUser) {
+    if (adminUser.password === passwordValue) {
+      console.log('Login successful');
+      window.location.href = '../Admin/adminFacility.html';
     } else {
+      console.log('Password mismatch');
       alert('Invalid password!');
     }
   } else {
-    alert('User not found!');
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    console.log('Current users in storage:', users);
+    
+    // Find user by either username or email
+    const user = users.find(user => 
+      user.username === credential || user.email === credential
+    );
+
+    console.log('Found user:', user);
+
+    if (user) {
+      if (user.password === passwordValue) {
+        console.log('Login successful');
+        window.location.href = '../User/room.html';
+      } else {
+        console.log('Password mismatch');
+        alert('Invalid password!');
+      }
+    } else {
+      console.log('User not found');
+      alert('User not found!');
+    }
   }
 });
-
-
-
-
-
-

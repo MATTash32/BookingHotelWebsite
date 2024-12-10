@@ -40,10 +40,14 @@
                         </li>
                         <li class="step">
                             <span>2</span>
-                            <p>Contact</p>  
+                            <p>Address</p>  
                         </li>
                         <li class="step">
                             <span>3</span>
+                            <p>Contact</p>
+                        </li>
+                        <li class="step">
+                            <span>4</span>
                             <p>Security</p>
                         </li>
                     </ul>
@@ -52,10 +56,9 @@
                 </div>
 
                 <form id="signupForm">
-                    <div class="form-one form-step active" >
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-one form-step active">
                         <div class="bg-svg"></div>
-                        
-                        
                         <div>
                             <label>First Name</label>
                             <input type="text" placeholder="Enter your first name">
@@ -64,13 +67,10 @@
                             <label>Last Name</label>
                             <input type="text" placeholder="Enter your last name">
                         </div>
-                        
-                        <div class="birth"></div>
-                        <div>
+                        <div class="birth">
                             <label for="dob">Date of birth</label>
                             <input type="date" id="dob" name="dob">
                         </div>
-                        
                         <div class="gender-age-row">
                             <div>
                                 <label for="gender">Gender</label>
@@ -86,128 +86,84 @@
                                 <input type="text" id="age" placeholder="Enter your age">
                             </div>
                         </div>
-
-                        <div class="checkbox">
-                            <input type="checkbox" name="checkbox" id="checkbox">
-                            <label for="checkbox">Please agree to the <a href="">terms of service</a></label>
-                        </div>
-
-                        
-
                     </div>
-
+                    
+                    <!-- Step 2: Address Information -->
                     <div class="form-two form-step">
-                        
                         <div>
-                            <label>phone no.</label>
+                            <label>Country</label>
+                            <select name="country" id="country" required>
+                                <option value="">Select Country</option>
+                                <option value="Philippines">Philippines</option>
+                                <!-- Add more countries as needed -->
+                            </select>
+                        </div>
+                        <div>
+                            <label>Province</label>
+                            <select name="province" id="province" required disabled>
+                                <option value="">Select Province</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>City</label>
+                            <select name="city" id="city" required disabled>
+                                <option value="">Select City</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Street Address</label>
+                            <input type="text" placeholder="Enter your street address" name="street" required>
+                        </div>
+                        <div>
+                            <label>Postal Code</label>
+                            <input type="text" id="postal" name="postal" placeholder="Enter your postal code" required readonly>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Contact Information -->
+                    <div class="form-three form-step">
+                        <div>
+                            <label>Phone Number</label>
                             <input type="tel" placeholder="+63xxxxxxxxxx">
                         </div>
-
                         <div>
                             <label>Email Address</label>
                             <input type="email" placeholder="Enter your email address" name="email" required>
                         </div>
-
-                        <div>
-                            <label>Country</label>
-                            <select name="Country" id="Country">
-                                <option value="">please select your country</option>
-                                <option value="USA">USA</option>
-                                <option value="Canada">Canada</option>
-                                <option value="UK">UK</option>
-                                <option value="Australia">Australia</option>
-                                <option value="Germany">Germany</option>
-                                <option value="France">France</option>
-                                <option value="Japan">Japan</option>
-                                <option value="China">China</option>
-                                <option value="India">India</option>
-                                <option value="Brazil">Brazil</option>
-                                <option value="Mexico">Mexico</option>
-                                <option value="Argentina">Argentina</option>
-                                <option value="South Africa">South Africa</option>
-                                <option value="Egypt">Egypt</option>
-                                <option value="Nigeria">Nigeria</option>
-                                <option value="Kenya">Kenya</option>
-                                <option value="Tunisia">Tunisia</option>
-                                <option value="Morocco">Morocco</option>
-                                <option value="Algeria">Algeria</option>
-                                <option value="Tanzania">Tanzania</option>
-                                <option value="Uganda">Uganda</option>
-                                <option value="Rwanda">Rwanda</option>
-                                <option value="Burundi">Burundi</option>
-                                <option value="Kenya">Kenya</option>
-                                <option value="Philippines">Philippines</option> 
-                                
-                            </select>
-                        </div>
-
-                        <div class="city-zip">
-                            <div>
-                                <label>Zip Code</label>
-                                <input type="text" placeholder="zip code">
-                            </div>
-
-                            <div>
-                                <label>City</label>
-                                <input type="text" placeholder="city">
-                            </div>
-
-                            <div>
-                                <label>Province</label>
-                                <input type="text" placeholder="Province">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label>Address</label>
-                            <input type="text" placeholder="street">
-                        </div>
-
                         <div class="otp">
                             <label>OTP</label>
                             <div class="otp-input">
                                 <input type="text" placeholder="Enter your OTP" id="otpInput" maxlength="6" required>
                                 <button id="verifyButton" disabled>Verify</button>
                             </div>
-
                             <span id="sendCodeButton">Send Code</span>
-                            
                         </div>
-                        
                     </div>
-
-                    <div class="form-three form-step">
-                        
-
+                    
+                    <!-- Step 4: Security Information -->
+                    <div class="form-four form-step">
                         <div>
-                            <label>username</label>
+                            <label>Username</label>
                             <input type="text" placeholder="Enter your username" name="username" required>
                         </div>
-
-                        
-
                         <div>
                             <label>Password</label>
-                            <div class="pass">
-                                <input type="password" name="password" minlength="8" id="password" placeholder="password" required>
-                                <img src="../pic/eye-close-svgrepo-com.svg" id="eyesvg" > 
+                            <div class="input">
+                                <input type="password" name="password" minlength="8" id="password" placeholder="Password" required>
+                                <img src="../pic/eye-close-svgrepo-com.svg" id="eyesvg">
                             </div>
                         </div>
-
                         <div>
                             <label>Confirm Password</label>
-                            <div class="pass">
-                                <input type="confirmPassword" name="confirmPassword" placeholder="confirmPassword" minlength="8"  id="password1" required>
-                                <img src="../pic/eye-close-svgrepo-com.svg" id="eyesvg1"> 
+                            <div class="input">
+                                <input type="password" name="confirmPassword" placeholder="Confirm Password" minlength="8" id="password1" required>
+                                <img src="../pic/eye-close-svgrepo-com.svg" id="eyesvg1">
                             </div>
                         </div>
-
-                        
-
-                        <div>
-
-                        </div> 
-
+                        <div class="checkbox">
+                            <input type="checkbox" name="checkbox" id="checkbox">
+                            <label for="checkbox">Please agree to the <a href="">terms of service</a></label>
+                        </div>
                     </div>
 
                     <div class="btn-group">
@@ -221,5 +177,6 @@
     </div>
     
     <script src="style.js"></script>
+    <script src="locations.js"></script>
 </body>
 </html>

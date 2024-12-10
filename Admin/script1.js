@@ -1,7 +1,4 @@
-
-
 let galleryImage = [];
-
 
 function loadGalleryData() {
     let storedGallery = localStorage.getItem('galleryData');
@@ -10,41 +7,45 @@ function loadGalleryData() {
     }
 }
 
-
 loadGalleryData();
 
 function loadGallery() {
     let galleryContainer = document.getElementById('addItem');
     
     if (galleryContainer && galleryImage.length > 0) {
+        galleryContainer.innerHTML = ''; // Clear existing content
         
-        
-        
-        for (let gallery of galleryImage) {
-        let galleryRow = document.createElement('tr');
-        galleryRow.innerHTML = `
-            <td>#${gallery.roomNumber}</td>
-            <td>${gallery.roomType} bed</td>
-            <td>${gallery.roomFloor}</td>
-            <td>none</td>
-            <td><img src="img/Vector (1).png" ></td>
-        `;
-        galleryContainer.appendChild(galleryRow);
+        for (let i = 0; i < galleryImage.length; i++) {
+            let gallery = galleryImage[i];
+            let galleryRow = document.createElement('tr');
+            galleryRow.innerHTML = `
+                <td>#${gallery.roomNumber}</td>
+                <td>${gallery.roomType} bed</td>
+                <td>${gallery.roomFloor}</td>
+                <td>none</td>
+                <td class="menu-container">
+                    <img src="img/Vector (1).png" onclick="toggleMenu(event, 'popupMenu${i}')" style="cursor: pointer;">
+                    <div class="popup-menu" id="popupMenu${i}">
+                        <div class="menu-item" onclick="editFacility(${i})">
+                            <i class='bx bx-edit-alt'></i>Edit
+                        </div>
+                        <div class="menu-item" onclick="deleteFacility(${i})">
+                            <i class='bx bx-trash'></i>Delete
+                        </div>
+                    </div>
+                </td>
+            `;
+            galleryContainer.appendChild(galleryRow);
         }
-        } else {
-            console.log("No gallery container found or no images to display");
-        }
+    } else {
+        console.log("No gallery container found or no images to display");
     }
+}
 
+loadGallery();
 
-    loadGallery();
+let addBtn = document.getElementById('addBtn');
 
-
-    let addBtn = document.getElementById('addBtn');
-
-    addBtn.addEventListener('click', function(event){
-      window.location.href = '../Admin/admin.html';
-    }
-    );
-
-
+addBtn.addEventListener('click', function(event){
+    window.location.href = '../Admin/admin.html';
+});
