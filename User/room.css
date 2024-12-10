@@ -28,7 +28,7 @@ p{
 header{
     display: flex;
     width: 100vw;
-    height: 70px;
+    height: 90px;
     flex-direction: row;
     justify-content: space-between;
     background-color: #fff;
@@ -50,6 +50,7 @@ header p{
     font-family: inter;
     font-weight: 500;
     font-size: 24px;
+    margin-left: 20px;
 }
 
 header nav{
